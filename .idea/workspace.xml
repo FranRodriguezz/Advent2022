@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6db0338f-b219-4f39-9e78-9339ce95fb16" name="Changes" comment="Day 1 advent of code 2022">
+    <list default="true" id="6db0338f-b219-4f39-9e78-9339ce95fb16" name="Changes" comment="Correcciones">
+      <change afterPath="$PROJECT_DIR$/Day2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/datosDay2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/advent/Day1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/advent/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/datosDay1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,17 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Fran/Desktop/Carpetas/Code/advent/day1",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Fran/Desktop/Carpetas/Code/advent/day1&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670025365044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Correcciones">
+      <created>1671579554335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671579554335</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Day 1 advent of code 2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 1 advent of code 2022" />
+    <MESSAGE value="Correcciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcciones" />
   </component>
 </project>

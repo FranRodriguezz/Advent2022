@@ -1,3 +1,5 @@
+package advent;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +9,7 @@ public class Day1 {
 
     public void run(){
         try{
-            File file = new File("src/datos.txt");
+            File file = new File("src/datosDay1.txt");
             String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
             String str = content.replace("\r\n", "~");
             String[] strSplit = str.split("~~");
