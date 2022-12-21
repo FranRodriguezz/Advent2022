@@ -23,6 +23,7 @@ public class Day2 {
         }
     }
 
+
     public int totalPoints(String str){
         int points = 0;
         if(str.contains("A")){
