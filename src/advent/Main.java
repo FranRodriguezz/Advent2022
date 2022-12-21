@@ -5,4 +5,5 @@ public class Main {
         var day2 = new Day2();
         day2.run();
     }
+
 }
