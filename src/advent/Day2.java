@@ -7,21 +7,21 @@ import java.nio.file.Paths;
 
 public class Day2 {
 
-    public void run() {
+    public static void run() {
         try {
             File file = new File("advent2022/src/datosDay2.txt");
             String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
             String content2 = content.replace(" ", "");
             String[] str = content2.split("\r\n");
-            this.runPart1(str);
-            this.runPart2(str);
+            runPart1(str);
+            runPart2(str);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
     //PART 2:
-    public void runPart2(String[] str){
+    public static void runPart2(String[] str){
         int points = 0;
         for(int i = 0; i < str.length; i++){
             points += totalPoints2(str[i]);
@@ -29,7 +29,7 @@ public class Day2 {
         System.out.println(points);
     }
 
-    public int totalPoints2(String str){
+    public static int totalPoints2(String str){
         int points = 0;
         if(str.contains("A")){
             points = pointsMatchRock2(str);
@@ -43,7 +43,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchRock2(String str){
+    public static int pointsMatchRock2(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 4; //1 rock, 3 draw
@@ -57,7 +57,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchPaper2(String str){
+    public static int pointsMatchPaper2(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 5; //2 paper, 3 draw
@@ -71,7 +71,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchScissor2(String str){
+    public static int pointsMatchScissor2(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 6; //3 scissor, 3 draw
@@ -86,14 +86,14 @@ public class Day2 {
     }
     //*****************************************************************************************************
     //PART 1:
-    public void runPart1(String[] str){
+    public static void runPart1(String[] str){
         int points = 0;
         for(int i = 0; i < str.length; i++){
             points += totalPoints(str[i]);
         }
         System.out.println(points);
     }
-    public int totalPoints(String str){
+    public static int totalPoints(String str){
         int points = 0;
         if(str.contains("A")){
             points = pointsElement(str) + pointsMatchRock(str);
@@ -107,7 +107,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsElement(String str){
+    public static int pointsElement(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 2; //paper
@@ -121,7 +121,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchRock(String str){
+    public static int pointsMatchRock(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 6;
@@ -132,7 +132,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchPaper(String str){
+    public static int pointsMatchPaper(String str){
         int points = 0;
         if(str.contains("Y")){
             points = 3;
@@ -143,7 +143,7 @@ public class Day2 {
         return points;
     }
 
-    public int pointsMatchScissors(String str){
+    public static int pointsMatchScissors(String str){
         int points = 0;
         if(str.contains("Z")){
             points = 3;
