@@ -13,17 +13,17 @@ public class Day3 {
             File file = new File("advent2022/src/datosDay3.txt");
             String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
             String[] str = content.split("\r\n");
-            System.out.println(totalPriority(str)); //part1
-            System.out.println(totalPriority2(str)); //part2
+            Map<Character, Integer> map = new HashMap<>();
+            loadCharValues(map);
+            System.out.println(totalPriority(str, map)); //part1
+            System.out.println(totalPriority2(str, map)); //part2
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
     //Part 2:
-    private static int totalPriority2(String[] str){
-        Map<Character, Integer> map = new HashMap<>();
-        loadCharValues(map);
+    private static int totalPriority2(String[] str, Map<Character, Integer> map){
         int priority = 0;
         int x = 0, y = 1, z = 2;
         String str1, str2, str3;
@@ -61,9 +61,7 @@ public class Day3 {
     }
 
     //Part 1: ***********************************************************************************************************
-    private static int totalPriority(String[] str) {
-        Map<Character, Integer> map = new HashMap<>();
-        loadCharValues(map);
+    private static int totalPriority(String[] str, Map<Character, Integer> map) {
         int priority = 0;
         for(int i = 0; i < str.length; i++){
             priority += individualPriority(map, str[i]);
