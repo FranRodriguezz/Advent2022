@@ -13,16 +13,56 @@ public class Day3 {
             File file = new File("advent2022/src/datosDay3.txt");
             String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
             String[] str = content.split("\r\n");
-            System.out.println(totalPriority(str));
+            System.out.println(totalPriority(str)); //part1
+            System.out.println(totalPriority2(str)); //part2
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
+    //Part 2:
+    private static int totalPriority2(String[] str){
+        Map<Character, Integer> map = new HashMap<>();
+        loadCharValues(map);
+        int priority = 0;
+        int x = 0, y = 1, z = 2;
+        String str1, str2, str3;
+        char chr;
+        while(z < str.length){
+            str1 = str[x];
+            str2 = str[y];
+            str3 = str[z];
+            chr = commonChar2(str1, str2, str3);
+            priority += charValue(map, chr);
+            x+=3;
+            y+=3;
+            z+=3;
+        }
+        return priority;
+    }
 
-    //Part 1: **************************************************************************************
+    private static char commonChar2(String str1, String str2, String str3) {
+        char commonChar = 0;
+        for(int i = 0; i < str1.length(); i++){
+            char aux = str1.charAt(i);
+            for(int j = 0; j < str2.length(); j++){
+                if (aux == str2.charAt(j)) {
+                    for(int k = 0; k < str3.length(); k++){
+                        if (aux == str3.charAt(k) && str3.charAt(k) > commonChar) {
+                            commonChar = aux;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        return commonChar;
+    }
+
+    //Part 1: ***********************************************************************************************************
     private static int totalPriority(String[] str) {
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<>();
         loadCharValues(map);
         int priority = 0;
         for(int i = 0; i < str.length; i++){
