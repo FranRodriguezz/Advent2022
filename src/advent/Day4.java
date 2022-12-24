@@ -20,8 +20,8 @@ public class Day4 {
 
     public static int pairs(String[] str) {
         int amount = 0;
-        for(int i = 0; i < str.length; i++){
-            if (contains(str[i])){
+        for (int i = 0; i < str.length; i++) {
+            if (contains(str[i])) {
                 amount++;
             }
         }
