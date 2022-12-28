@@ -20,6 +20,29 @@ public class Day5 {
         finalMessage(towers);
     }
 
+
+    //Part 2:
+    private static void individualMovement2(List<Stack<Character>> towers, String str) {
+        String[] aux = str.split("~");
+        int[] numbers = new int[aux.length];
+        for (int i = 0; i < aux.length; i++) {
+            numbers[i] = Integer.parseInt(aux[i]);
+        }
+        int amount = numbers[0];
+        int originalTower = numbers[1];
+        int targetTower = numbers[2];
+        char[] arrAux = new char[amount];
+        while (amount > 0) {
+            var charAux = towers.get(originalTower - 1).pop();
+            arrAux[amount - 1] = charAux;
+            amount--;
+        }
+        for (char charAux : arrAux) {
+            towers.get(targetTower - 1).push(charAux);
+        }
+    }
+
+    //Part 1: ***********************************************************************************************************
     public static void loadTowers(List<Stack<Character>> towers) {
         try {
             File file = new File("advent2022/src/datos1Day5.txt");
@@ -56,7 +79,7 @@ public class Day5 {
                 str[i] = str[i].replace(" to ", "~");
             }
             for (String s : str) {
-                individualMovement(towers, s);
+                individualMovement2(towers, s); //Switch between individualMovements and individualMovements2
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -65,7 +88,7 @@ public class Day5 {
 
     private static void finalMessage(List<Stack<Character>> towers) {
         for (Stack<Character> tower : towers) {
-            System.out.println(tower.pop());
+            System.out.println(tower.peek());
         }
     }
 
