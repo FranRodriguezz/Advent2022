@@ -1,23 +1,11 @@
 package advent;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-
-public class Day4 {
+public class Day4 implements InputReader{
 
     public static void run() {
-        try {
-            File file = new File("advent2022/src/datosDay4.txt");
-            String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-            String[] str = content.split("\r\n");
-            System.out.println(pairs(str)); //Part 1
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+        String[] str = InputReader.splitInput("advent2022/src/datosDay4.txt");
+        System.out.println(pairs(str));
     }
-
 
     //Part 2: **********************************************************************************************************
     public static boolean compareRanges2(String[] str1, String[] str2) {
@@ -35,8 +23,8 @@ public class Day4 {
     //Part 1: **********************************************************************************************************
     public static int pairs(String[] str) {
         int amount = 0;
-        for (int i = 0; i < str.length; i++) {
-            if (contains(str[i])) {
+        for (String s : str) {
+            if (contains(s)) {
                 amount++;
             }
         }

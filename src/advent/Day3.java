@@ -1,25 +1,16 @@
 package advent;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Day3 {
+public class Day3 implements InputReader{
 
     public static void run() {
-        try {
-            File file = new File("advent2022/src/datosDay3.txt");
-            String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-            String[] str = content.split("\r\n");
-            Map<Character, Integer> map = new HashMap<>();
-            loadCharValues(map);
-            System.out.println(totalPriority(str, map)); //part1
-            System.out.println(totalPriority2(str, map)); //part2
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+        String[] str = InputReader.splitInput("advent2022/src/datosDay3.txt");
+        Map<Character, Integer> map = new HashMap<>();
+        loadCharValues(map);
+        System.out.println(totalPriority(str, map)); //part1
+        System.out.println(totalPriority2(str, map)); //part2
     }
 
     //Part 2:
@@ -63,8 +54,8 @@ public class Day3 {
     //Part 1: ***********************************************************************************************************
     private static int totalPriority(String[] str, Map<Character, Integer> map) {
         int priority = 0;
-        for(int i = 0; i < str.length; i++){
-            priority += individualPriority(map, str[i]);
+        for (String s : str) {
+            priority += individualPriority(map, s);
         }
         return priority;
     }

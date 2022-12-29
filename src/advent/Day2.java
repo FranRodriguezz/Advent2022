@@ -1,30 +1,21 @@
 package advent;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-
-public class Day2 {
+public class Day2 implements InputReader{
 
     public static void run() {
-        try {
-            File file = new File("advent2022/src/datosDay2.txt");
-            String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-            String content2 = content.replace(" ", "");
-            String[] str = content2.split("\r\n");
-            runPart1(str);
-            runPart2(str);
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+        String content = InputReader.regularInput("advent2022/src/datosDay2.txt");
+        assert content != null;
+        String content2 = content.replace(" ", "");
+        String[] str = content2.split("\r\n");
+        runPart1(str);
+        runPart2(str);
     }
 
     //PART 2:
     public static void runPart2(String[] str){
         int points = 0;
-        for(int i = 0; i < str.length; i++){
-            points += totalPoints2(str[i]);
+        for (String s : str) {
+            points += totalPoints2(s);
         }
         System.out.println(points);
     }
@@ -88,8 +79,8 @@ public class Day2 {
     //PART 1:
     public static void runPart1(String[] str){
         int points = 0;
-        for(int i = 0; i < str.length; i++){
-            points += totalPoints(str[i]);
+        for (String s : str) {
+            points += totalPoints(s);
         }
         System.out.println(points);
     }

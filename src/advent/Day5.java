@@ -1,14 +1,10 @@
 package advent;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class Day5 {
-
+public class Day5 implements InputReader{
 
     public static void run() {
         List<Stack<Character>> towers = new ArrayList<>(9);
@@ -19,7 +15,6 @@ public class Day5 {
         makeMovements(towers);
         finalMessage(towers);
     }
-
 
     //Part 2:
     private static void individualMovement2(List<Stack<Character>> towers, String str) {
@@ -44,15 +39,9 @@ public class Day5 {
 
     //Part 1: ***********************************************************************************************************
     public static void loadTowers(List<Stack<Character>> towers) {
-        try {
-            File file = new File("advent2022/src/datos1Day5.txt");
-            String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-            String[] str = content.split("\r\n");
-            for (int i = 7; i > -1; i--) {
-                loadTower(towers, str[i]);
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        String[] str = InputReader.splitInput("advent2022/src/datos1Day5.txt");
+        for (int i = 7; i > -1; i--) {
+            loadTower(towers, str[i]);
         }
     }
 
@@ -69,20 +58,14 @@ public class Day5 {
     }
 
     public static void makeMovements(List<Stack<Character>> towers) {
-        try {
-            File file = new File("advent2022/src/datos2Day5.txt");
-            String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
-            String[] str = content.split("\r\n");
-            for (int i = 0; i < str.length; i++) {
-                str[i] = str[i].replace("move ", "");
-                str[i] = str[i].replace(" from ", "~");
-                str[i] = str[i].replace(" to ", "~");
-            }
-            for (String s : str) {
-                individualMovement2(towers, s); //Switch between individualMovements and individualMovements2
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+        String[] str = InputReader.splitInput("advent2022/src/datos2Day5.txt");
+        for (int i = 0; i < str.length; i++) {
+            str[i] = str[i].replace("move ", "");
+            str[i] = str[i].replace(" from ", "~");
+            str[i] = str[i].replace(" to ", "~");
+        }
+        for (String s : str) {
+            individualMovement2(towers, s); //Switch between individualMovements and individualMovements2
         }
     }
 
